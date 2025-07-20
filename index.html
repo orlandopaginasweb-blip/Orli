@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Herramienta de Limpieza PC</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; background: #f0f0f0; transition: background 0.3s, color 0.3s; }
+  header { text-align: center; margin-bottom: 30px; }
+  section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  button {
+    background: #0078d7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  button:hover { background: #005a9e; }
+  pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+
+  /* Modo oscuro */
+  body.dark { background: #1e1e1e; color: white; }
+  body.dark section { background: #2b2b2b; }
+  body.dark pre { background: #444; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Herramienta Guiada para Limpiar y Optimizar tu PC - Orlando Sandoval</h1>
+  <p>Scripts útiles para mejorar el rendimiento de tu computadora.</p>
+  <button onclick="toggleDarkMode()">🌗 Cambiar Modo</button>
+</header>
+
+<section>
+  <h2>1. Limpiar archivos temporales</h2>
+  <p>Descarga y ejecuta este script para eliminar archivos temporales.</p>
+  <pre>
+@echo off
+del /q /f /s %TEMP%\*
+del /q /f /s C:\Windows\Temp\*
+del /q /f /s C:\Windows\Prefetch\*
+echo Limpieza completa.
+pause
+  </pre>
+  <button onclick="descargarBat('limpiar_temporales.bat', limpiarTemporales)">Descargar Script .bat</button>
+</section>
+
+<section>
+  <h2>2. Liberar memoria RAM</h2>
+  <p>Copia y ejecuta este comando para liberar memoria.</p>
+  <pre>Rundll32.exe advapi32.dll,ProcessIdleTasks</pre>
+  <button onclick="copiarTexto('Rundll32.exe advapi32.dll,ProcessIdleTasks')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>3. Limpiar Prefetch</h2>
+  <p>Ejecuta este comando para limpiar la carpeta Prefetch.</p>
+  <pre>del /q /f /s C:\Windows\Prefetch\*</pre>
+  <button onclick="copiarTexto('del /q /f /s C:\\Windows\\Prefetch\\*')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>4. Vaciar Papelera de Reciclaje</h2>
+  <p>Este comando vacía la papelera de todas las unidades usando PowerShell.</p>
+  <pre>PowerShell.exe -Command Clear-RecycleBin -Force</pre>
+  <button onclick="copiarTexto('PowerShell.exe -Command Clear-RecycleBin -Force')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>5. Ver programas al iniciar</h2>
+  <p>Usa este comando para abrir el Administrador de Tareas y gestionar programas que se ejecutan al iniciar.</p>
+  <pre>taskmgr</pre>
+  <button onclick="copiarTexto('taskmgr')">Abrir el Administrador de tareas</button>
+</section>
+
+<section>
+  <h2>6. Limpiar caché de DNS</h2>
+  <p>Mejora la conexión limpiando el DNS de tu sistema.</p>
+  <pre>ipconfig /flushdns</pre>
+  <button onclick="copiarTexto('ipconfig /flushdns')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>7. Comprobar errores del disco</h2>
+  <p>Analiza tu disco para encontrar y corregir errores.</p>
+  <pre>chkdsk /f /r</pre>
+  <button onclick="copiarTexto('chkdsk /f /r')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>8. Reiniciar el Explorador de Windows</h2>
+  <p>Útil si el escritorio o barra de tareas se congela.</p>
+  <pre>taskkill /f /im explorer.exe & start explorer.exe</pre>
+  <button onclick="copiarTexto('taskkill /f /im explorer.exe & start explorer.exe')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>9. Activar modo de máximo rendimiento</h2>
+  <p>Este comando habilita el plan de energía para sacar el máximo rendimiento de tu PC.</p>
+  <pre>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</pre>
+  <button onclick="copiarTexto('powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>10. Forzar cierre de programas</h2>
+  <p>Reemplazá <code>chrome.exe</code> por el programa que quieras cerrar de golpe.</p>
+  <pre>taskkill /f /im chrome.exe</pre>
+  <button onclick="copiarTexto('taskkill /f /im chrome.exe')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>11. Borrar historial de navegación (Edge/IE)</h2>
+  <p>Elimina historial y caché de Internet Explorer o Edge clásico.</p>
+  <pre>RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 255</pre>
+  <button onclick="copiarTexto('RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 255')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>12. Desactivar servicios innecesarios</h2>
+  <p>Ejemplo: Desactivar el servicio de Fax.</p>
+  <pre>sc config Fax start= disabled</pre>
+  <button onclick="copiarTexto('sc config Fax start= disabled')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>13. Ver procesos activos</h2>
+  <p>Ejecuta esto para listar todos los programas que se están ejecutando.</p>
+  <pre>tasklist</pre>
+  <button onclick="copiarTexto('tasklist')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>14. Liberar RAM automáticamente</h2>
+  <p>Este script libera memoria inactiva sin reiniciar tu PC.</p>
+  <pre>FreeMem = Space(3200000000)</pre>
+  <button onclick="descargarBat('liberar_ram.vbs', liberarRamVBS)">Descargar Script .vbs</button>
+</section>
+
+<section>
+  <h2>15. Revisar tareas programadas al iniciar</h2>
+  <p>Abre el Programador de Tareas para desactivar tareas que no necesitas al iniciar.</p>
+  <pre>taskschd.msc</pre>
+  <button onclick="copiarTexto('taskschd.msc')">Abrir Programador de Tareas</button>
+</section>
+
+<section>
+  <h2>16. Limpieza avanzada con Cleanmgr</h2>
+  <p>Abre el liberador de espacio con más opciones.</p>
+  <pre>cleanmgr /sageset:1 & cleanmgr /sagerun:1</pre>
+  <button onclick="copiarTexto('cleanmgr /sageset:1 & cleanmgr /sagerun:1')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>17. Ver tiempo de uso de la PC (uptime)</h2>
+  <p>Este comando muestra cuánto tiempo lleva encendida la PC sin reiniciar.</p>
+  <pre>systeminfo | find "Tiempo de arranque del sistema"</pre>
+  <button onclick="copiarTexto('systeminfo | find \"Tiempo de arranque del sistema\"')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>18. Ver conexiones activas</h2>
+  <p>Este comando muestra qué programas están usando Internet actualmente.</p>
+  <pre>netstat -ano</pre>
+  <button onclick="copiarTexto('netstat -ano')">Copiar Comando</button>
+</section>
+
+<section>
+  <h2>19. Escaneo rápido contra software malicioso</h2>
+  <p>Usa la herramienta integrada de Microsoft para buscar malware.</p>
+  <pre>MRT.exe</pre>
+  <button onclick="copiarTexto('MRT.exe')">Abrir Herramienta de Escaneo</button>
+</section>
+
+<section>
+  <h2>20. Abrir Panel de Control</h2>
+  <p>Acceso rápido al Panel de Control clásico de Windows.</p>
+  <pre>control</pre>
+  <button onclick="copiarTexto('control')">Abrir Panel de Control</button>
+</section>
+
+<script>
+function copiarTexto(texto) {
+  navigator.clipboard.writeText(texto)
+    .then(() => alert('Comando copiado al portapapeles'))
+    .catch(() => alert('Error al copiar'));
+}
+
+function descargarBat(nombre, contenido) {
+  const blob = new Blob([contenido], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = nombre;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+
+const limpiarTemporales = `@echo off
+del /q /f /s %TEMP%\\*
+del /q /f /s C:\\Windows\\Temp\\*
+del /q /f /s C:\\Windows\\Prefetch\\*
+echo Limpieza completa.
+pause`;
+
+const liberarRamVBS = `FreeMem = Space(3200000000)`;
+</script>
+
+</body>
+</html>
