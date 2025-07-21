@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Herramienta de Limpieza PC</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; background: #f0f0f0; transition: background 0.3s, color 0.3s; }
-  header { text-align: center; margin-bottom: 30px; }
-  section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
-  button {
-    background: #0078d7;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  button:hover { background: #005a9e; }
-  pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Herramienta de Limpieza PC</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f0f0f0; transition: background 0.3s, color 0.3s; }
+    header { text-align: center; margin-bottom: 30px; }
+    section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+    button {
+      background: #0078d7;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover { background: #005a9e; }
+    pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
 
-  /* Modo oscuro */
-  body.dark { background: #1e1e1e; color: white; }
-  body.dark section { background: #2b2b2b; }
-  body.dark pre { background: #444; }
-</style>
+    /* Modo oscuro */
+    body.dark { background: #1e1e1e; color: white; }
+    body.dark section { background: #2b2b2b; }
+    body.dark pre { background: #444; }
+  </style>
 </head>
 <body>
 
@@ -71,9 +71,9 @@ pause
 
 <section>
   <h2>5. Ver programas al iniciar</h2>
-  <p>Usa este comando para abrir el Administrador de Tareas y gestionar programas que se ejecutan al iniciar.</p>
+  <p>Usa este comando para abrir el Administrador de Tareas.</p>
   <pre>taskmgr</pre>
-  <button onclick="copiarTexto('taskmgr')">Abrir el Administrador de tareas</button>
+  <button onclick="copiarTexto('taskmgr')">Copiar Comando</button>
 </section>
 
 <section>
@@ -99,14 +99,14 @@ pause
 
 <section>
   <h2>9. Activar modo de máximo rendimiento</h2>
-  <p>Este comando habilita el plan de energía para sacar el máximo rendimiento de tu PC.</p>
+  <p>Este comando habilita el plan de energía de máximo rendimiento.</p>
   <pre>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</pre>
   <button onclick="copiarTexto('powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61')">Copiar Comando</button>
 </section>
 
 <section>
   <h2>10. Forzar cierre de programas</h2>
-  <p>Reemplazá <code>chrome.exe</code> por el programa que quieras cerrar de golpe.</p>
+  <p>Reemplazá <code>chrome.exe</code> por el programa que quieras cerrar.</p>
   <pre>taskkill /f /im chrome.exe</pre>
   <button onclick="copiarTexto('taskkill /f /im chrome.exe')">Copiar Comando</button>
 </section>
@@ -141,9 +141,9 @@ pause
 
 <section>
   <h2>15. Revisar tareas programadas al iniciar</h2>
-  <p>Abre el Programador de Tareas para desactivar tareas que no necesitas al iniciar.</p>
+  <p>Abre el Programador de Tareas.</p>
   <pre>taskschd.msc</pre>
-  <button onclick="copiarTexto('taskschd.msc')">Abrir Programador de Tareas</button>
+  <button onclick="copiarTexto('taskschd.msc')">Copiar Comando</button>
 </section>
 
 <section>
@@ -155,62 +155,63 @@ pause
 
 <section>
   <h2>17. Ver tiempo de uso de la PC (uptime)</h2>
-  <p>Este comando muestra cuánto tiempo lleva encendida la PC sin reiniciar.</p>
+  <p>Muestra cuánto tiempo lleva encendida la PC.</p>
   <pre>systeminfo | find "Tiempo de arranque del sistema"</pre>
   <button onclick="copiarTexto('systeminfo | find \"Tiempo de arranque del sistema\"')">Copiar Comando</button>
 </section>
 
 <section>
   <h2>18. Ver conexiones activas</h2>
-  <p>Este comando muestra qué programas están usando Internet actualmente.</p>
+  <p>Este comando muestra qué programas están usando Internet.</p>
   <pre>netstat -ano</pre>
   <button onclick="copiarTexto('netstat -ano')">Copiar Comando</button>
 </section>
 
 <section>
   <h2>19. Escaneo rápido contra software malicioso</h2>
-  <p>Usa la herramienta integrada de Microsoft para buscar malware.</p>
+  <p>Ejecuta la herramienta integrada de Microsoft.</p>
   <pre>MRT.exe</pre>
-  <button onclick="copiarTexto('MRT.exe')">Abrir Herramienta de Escaneo</button>
+  <button onclick="copiarTexto('MRT.exe')">Copiar Comando</button>
 </section>
 
 <section>
   <h2>20. Abrir Panel de Control</h2>
-  <p>Acceso rápido al Panel de Control clásico de Windows.</p>
+  <p>Acceso rápido al Panel de Control clásico.</p>
   <pre>control</pre>
-  <button onclick="copiarTexto('control')">Abrir Panel de Control</button>
+  <button onclick="copiarTexto('control')">Copiar Comando</button>
 </section>
 
 <script>
-function copiarTexto(texto) {
-  navigator.clipboard.writeText(texto)
-    .then(() => alert('Comando copiado al portapapeles'))
-    .catch(() => alert('Error al copiar'));
-}
-
-function descargarBat(nombre, contenido) {
-  const blob = new Blob([contenido], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = nombre;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
-}
-
-const limpiarTemporales = `@echo off
+  const limpiarTemporales = `@echo off
 del /q /f /s %TEMP%\\*
 del /q /f /s C:\\Windows\\Temp\\*
 del /q /f /s C:\\Windows\\Prefetch\\*
 echo Limpieza completa.
 pause`;
 
-const liberarRamVBS = `FreeMem = Space(3200000000)`;
+  const liberarRamVBS = `FreeMem = Space(3200000000)`;
+
+  function copiarTexto(texto) {
+    navigator.clipboard.writeText(texto)
+      .then(() => alert('Comando copiado al portapapeles'))
+      .catch(() => alert('Error al copiar'));
+  }
+
+  function descargarBat(nombre, contenido) {
+    const blob = new Blob([contenido], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = nombre;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+  }
 </script>
 
 </body>
